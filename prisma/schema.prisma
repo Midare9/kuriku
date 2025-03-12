@@ -9,7 +9,27 @@ datasource db {
 
 model User {
   id       String  @id @default(cuid())
-  email    String  @unique
   name     String
-  password String?
+  email    String  @unique
+  password String
+
+  session Session[]
+  curriculum Curriculum[]
+}
+
+model Session {
+  id String @id @default(cuid())
+
+  userId String
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Curriculum {
+  id String @id @default(cuid())
+  subjectName String
+  topic String
+  exercise String
+
+  userId String
+  user User @relation(fields: [userId], references: [id])
 }

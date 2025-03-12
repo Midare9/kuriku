@@ -1,3 +1,3 @@
-export default function Home() {
-  return <div>Kuriku</div>;
+export default function Page() {
+  return <div>Kuri-ku</div>;
 }
