@@ -1,10 +1,13 @@
-import CurriculumForm from "../../../components/CurriculumForm";
+import { Header } from "@/components/header";
+import { Prompt } from "@/components/prompt";
+import { Result } from "@/components/result";
 
-export default function DashboardPage() {
-  return (
-    <div>
-      <h1>Dashboard</h1>
-      <CurriculumForm />
-    </div>
-  );
+export default function Page() {
+	return (
+		<container className="flex flex-col gap-2 p-4">
+			<Header />
+			<Prompt />
+			<Result />
+		</container>
+	);
 }

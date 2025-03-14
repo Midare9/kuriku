@@ -1,15 +1,11 @@
-import { Header } from "@/_components/header";
-import { Prompt } from "@/_components/prompt";
-import { Result } from "@/_components/result";
+import { Navbar } from "@/components/navbar";
+import { HeroBanner } from "@/components/heroBanner";
 
 export default function Page() {
 	return (
-		<container className="flex flex-col gap-2 p-4">
-			<Header />
-			<Prompt />
-			<Result />
-		</container>
+		<main>
+			<Navbar />
+			<HeroBanner />
+		</main>
 	);
 }
-
-
