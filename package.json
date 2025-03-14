@@ -1,5 +1,5 @@
 {
-  "name": "devscale-nextjs-r2",
+  "name": "kuriku",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,10 +16,11 @@
     "@heroui/react": "^2.7.4",
     "@prisma/client": "^6.4.1",
     "arctic": "^3.5.0",
+    "axios": "^1.8.3",
     "bcrypt": "^5.1.1",
     "framer-motion": "^12.4.10",
     "next": "15.2.1",
-    "nextjs": "^0.0.3",
+    "openai": "^4.87.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

@@ -2,4 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+.answer-container {
+  width: 100%; /* Ensures the container takes up full width */
+  max-width: 800px; /* Restricts maximum width */
+  word-break: break-word; /* Allows breaking long words */
+  overflow-y: auto; /* Adds a scrollbar if content exceeds max height */
+  background-color: #f9f9f9; /* Light background for better readability */
+  padding: 1rem; /* Adds padding for spacing */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.answer-container h3 {
+  margin-bottom: 1rem;
+}
+
+.answer-container p {
+  margin-bottom: 1rem;
+  text-align: justify ;
+  text-wrap: wrap;
+}
+
