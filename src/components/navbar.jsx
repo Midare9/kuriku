@@ -8,7 +8,7 @@ export const Navbar = () => {
 				<div className="kuriku-title">kuriku | curriculum generator</div>
 				<div className="flex items-center gap-6">
 					<Button
-						color="primary"
+						color="default"
 						variant="ghost">
 						Sign in
 					</Button>
