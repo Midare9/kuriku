@@ -1,44 +1,35 @@
 import axios from "axios";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { topic, level, duration, goal } = req.body;
+    const { topic, gradeLevel, duration, learningObjectives } = req.body;
 
     const prompt = `Generate a detailed curriculum for the following:
     Topic: ${topic},
-    Level: ${level},
+    Grade Level: ${gradeLevel},
     Duration: ${duration} weeks,
-    Goal: ${goal}.
+    Learning Objectives: ${learningObjectives}.
     
-    Structure the output with bullet points for each week.`;
+    Structure the output with sections for each week (e.g., Week 1, Week 2, etc.). Use bullet points for key activities and objectives. Ensure each week's content is concise and actionable.`;
 
     try {
       const response = await axios.post(
-        "https://api.perplexity.ai/chat/completions",
+        "https://openrouter.ai/api/v1/completions",
         {
-          model: "sonar-pro",
-          messages: [
-            { role: "system", content: "Be precise and concise." },
-            { role: "user", content: prompt },
-          ],
+          model: "google/gemini-2.0-flash-lite-001", // Specify the Gemini 2.0 Flash-Lite model
+          prompt: prompt,
+          max_tokens: 1500,
+          temperature: 0.7,
         },
         {
           headers: {
-            Authorization: `Bearer ${process.env.PERPLEXITY_API_KEY}`,
+            Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+            "Content-Type": "application/json",
           },
         }
       );
 
-      console.log("API Response:", response.data); // Log the response
-
-      if (!response || !response.data || !response.data.choices) {
-        throw new Error("Invalid response from Perplexity API");
-      }
-
-      const curriculumContent = response.data.choices[0].message.content;
+      const curriculumContent = response.data.choices[0].text.trim();
 
       res.status(200).json({ description: curriculumContent });
     } catch (error) {

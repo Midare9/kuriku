@@ -23,54 +23,49 @@ export default function CurriculumForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <input
-        type="text"
-        placeholder="Topic"
-        value={topic}
-        onChange={(e) => setTopic(e.target.value)}
-        className="p-2 border rounded"
-      />
-      <input
-        type="text"
-        placeholder="Grade Level"
-        value={gradeLevel}
-        onChange={(e) => setGradeLevel(e.target.value)}
-        className="p-2 border rounded"
-      />
-      <input
-        type="number"
-        placeholder="Duration (in weeks)"
-        value={duration}
-        onChange={(e) => setDuration(e.target.value)}
-        className="p-2 border rounded"
-      />
-      <textarea
-        placeholder="Learning Objectives"
-        value={learningObjectives}
-        onChange={(e) => setLearningObjectives(e.target.value)}
-        className="p-2 border rounded"
-      />
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded">
-        Generate Curriculum
-      </button>
+    <div className="form-container">
+      <form onSubmit={handleSubmit} className="form">
+        {/* Input Fields */}
+        <input
+          type="text"
+          placeholder="Topic"
+          value={topic}
+          onChange={(e) => setTopic(e.target.value)}
+          className="form-input"
+        />
+        <input
+          type="text"
+          placeholder="Grade Level"
+          value={gradeLevel}
+          onChange={(e) => setGradeLevel(e.target.value)}
+          className="form-input"
+        />
+        <input
+          type="number"
+          placeholder="Duration (in weeks)"
+          value={duration}
+          onChange={(e) => setDuration(e.target.value)}
+          className="form-input"
+        />
+        <textarea
+          placeholder="Learning Objectives"
+          value={learningObjectives}
+          onChange={(e) => setLearningObjectives(e.target.value)}
+          className="form-input"
+        />
+        {/* Submit Button */}
+        <button type="submit" className="form-button">
+          Generate Curriculum
+        </button>
+      </form>
+
+      {/* Render Generated Curriculum */}
       {generatedCurriculum && (
-        <div className="answer-container">
-          <h3 className="font-bold text-lg">Generated Curriculum</h3>
-          <div>
-            {generatedCurriculum.description
-              .split("Week")
-              .map((section, index) => (
-                <div key={index}>
-                  {index > 0 && (
-                    <h4 className="font-bold text-lg">Week {index}:</h4>
-                  )}
-                  <p>{section.trim()}</p>
-                </div>
-              ))}
-          </div>
+        <div className="response-container">
+          <h3>Generated Curriculum</h3>
+          <pre>{generatedCurriculum.description}</pre>
         </div>
       )}
-    </form>
+    </div>
   );
 }
