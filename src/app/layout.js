@@ -5,8 +5,8 @@ import { HeroUIProvider } from "@heroui/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Template Next.js | Devscale ID",
-  description: "Template Project Next.js for Devscale ID",
+  title: "Kuri-ku | Curriculum Generator",
+  description: "Curriculum Generator",
   icons: {
     icon: "/icon.svg",
   },

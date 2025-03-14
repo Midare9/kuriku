@@ -1,5 +1,10 @@
-export default function Page() {
+import CurriculumForm from "../../../components/CurriculumForm";
+
+export default function DashboardPage() {
   return (
-    <div>page</div>
-  )
+    <div>
+      <h1>Dashboard</h1>
+      <CurriculumForm />
+    </div>
+  );
 }
