@@ -1,8 +1,9 @@
-import CurriculumForm from "../components/CurriculumForm";
+import CurriculumForm from "../../../components/CurriculumForm";
 
-export default function Page() {
+export default function DashboardPage() {
   return (
-    <div className="p-5 flex flex-col items-center">
+    <div>
+      <h1>Dashboard</h1>
       <CurriculumForm />
     </div>
   );
