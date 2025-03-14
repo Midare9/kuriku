@@ -25,12 +25,11 @@ model Session {
 }
 
 model Curriculum {
-  id        String   @id @default(cuid())
-  title     String
-  description String
-  topics    String
-  gradeLevel String
-  duration  String
-  learningObjectives String
-}
+  id String @id @default(cuid())
+  subjectName String
+  topic String
+  exercise String
 
+  userId String
+  user User @relation(fields: [userId], references: [id])
+}
