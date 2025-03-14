@@ -1,4 +1,5 @@
 import { Button } from "@heroui/react";
+import Link from "next/link";
 
 export const HeroBanner = () => {
 	return (
@@ -10,11 +11,13 @@ export const HeroBanner = () => {
 				Let us help you to becoming an expertise.
 			</p>
 			<div className="flex gap-4 justify-center">
-				<Button
-					color="default"
-					size="lg">
-					Start creating
-				</Button>
+				<Link href="/dashboard">
+					<Button
+						color="default"
+						size="lg">
+						Start creating
+					</Button>
+				</Link>
 			</div>
 		</div>
 	);
