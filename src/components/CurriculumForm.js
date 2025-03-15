@@ -1,6 +1,8 @@
 "use client";
 
+import { Button, Input, Textarea } from "@heroui/react";
 import React, { useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 export default function CurriculumForm() {
   const [topic, setTopic] = useState("");
@@ -26,44 +28,23 @@ export default function CurriculumForm() {
     <div className="form-container">
       <form onSubmit={handleSubmit} className="form">
         {/* Input Fields */}
-        <input
-          type="text"
-          placeholder="Topic"
-          value={topic}
-          onChange={(e) => setTopic(e.target.value)}
-          className="form-input"
-        />
-        <input
-          type="text"
-          placeholder="Grade Level"
-          value={gradeLevel}
-          onChange={(e) => setGradeLevel(e.target.value)}
-          className="form-input"
-        />
-        <input
-          type="number"
-          placeholder="Duration (in weeks)"
-          value={duration}
-          onChange={(e) => setDuration(e.target.value)}
-          className="form-input"
-        />
-        <textarea
-          placeholder="Learning Objectives"
-          value={learningObjectives}
-          onChange={(e) => setLearningObjectives(e.target.value)}
-          className="form-input"
-        />
+        <Input type="text" placeholder="Topic" value={topic} onChange={(e) => setTopic(e.target.value)} />
+        <Input type="text" placeholder="Grade Level" value={gradeLevel} onChange={(e) => setGradeLevel(e.target.value)} />
+        <Input type="number" placeholder="Duration (in weeks)" value={duration} onChange={(e) => setDuration(e.target.value)} />
+        <Textarea placeholder="Learning Objectives" value={learningObjectives} onChange={(e) => setLearningObjectives(e.target.value)} />
         {/* Submit Button */}
-        <button type="submit" className="form-button">
+        <Button type="submit" className="form-button">
           Generate Curriculum
-        </button>
+        </Button>
       </form>
 
       {/* Render Generated Curriculum */}
       {generatedCurriculum && (
         <div className="response-container">
           <h3>Generated Curriculum</h3>
-          <pre>{generatedCurriculum.description}</pre>
+          <div className="prose">
+            <ReactMarkdown>{generatedCurriculum.description}</ReactMarkdown>
+          </div>
         </div>
       )}
     </div>
