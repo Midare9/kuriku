@@ -5,8 +5,8 @@ import { HeroUIProvider } from "@heroui/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Kuri-ku | Curriculum Generator",
-  description: "Curriculum Generator",
+  title: "Kuri-ku",
+  description: "Vortix's final assignment",
   icons: {
     icon: "/icon.svg",
   },

@@ -1,6 +1,6 @@
 "use client";
 import { Button, Input } from "@heroui/react";
-// import { OauthButton } from "../_components/oauthButton";
+import { OauthButton } from "../_components/oauthButton";
 import { useActionState } from "react";
 import { loginAction } from "./action";
 import Link from "next/link";
@@ -28,7 +28,7 @@ export default function Page() {
             />
             <Input
               label="Password"
-              placeholder="Create a password"
+              placeholder="Enter your password"
               name="password"
               type="password"
               variant="underlined"
@@ -48,7 +48,7 @@ export default function Page() {
           <StateStatus state={state} />
         </form>
 
-        {/* <div className="relative my-8">
+        <div className="relative my-8">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-gray-200"></div>
           </div>
@@ -59,7 +59,7 @@ export default function Page() {
           </div>
         </div>
 
-        <OauthButton /> */}
+        <OauthButton />
 
         <p className="mt-6 text-center text-sm text-gray-600">
           Don't have an account?{" "}
