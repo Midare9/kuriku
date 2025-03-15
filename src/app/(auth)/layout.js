@@ -12,17 +12,6 @@ export default function Page({ children }) {
                 Kuri-ku
               </Link>
             </div>
-            {/* <div>
-              <Link href="">
-                <Button
-                  variant="primary"
-                  size="md"
-                  className="font-medium p-4 hover:bg-primary-50"
-                >
-                  Explore Events
-                </Button>
-              </Link>
-            </div> */}
           </div>
         </div>
       </header>

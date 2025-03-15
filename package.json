@@ -17,6 +17,7 @@
     "@prisma/client": "^6.4.1",
     "arctic": "^3.5.0",
     "bcrypt": "^5.1.1",
+    "boring-avatars": "^1.11.2",
     "framer-motion": "^12.4.10",
     "next": "15.2.1",
     "react": "^19.0.0",
