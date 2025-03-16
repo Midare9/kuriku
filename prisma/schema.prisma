@@ -13,7 +13,7 @@ model User {
   email    String  @unique
   password String?
 
-  session Session[]
+  session    Session[]
   curriculum Curriculum[]
 }
 
@@ -21,19 +21,18 @@ model Session {
   id String @id @default(cuid())
 
   userId String
-  user User @relation(fields: [userId], references: [id])
+  user   User   @relation(fields: [userId], references: [id])
 }
 
 model Curriculum {
-  id        String   @id @default(cuid())
-  title     String
-  description String
-  topics    String
-  gradeLevel String
-  duration  String
+  id                 String  @id @default(cuid())
+  title              String
+  description        String
+  topics             String
+  gradeLevel         String
+  duration           String
   learningObjectives String
 
     userId String
   user User @relation(fields: [userId], references: [id])
 }
-
