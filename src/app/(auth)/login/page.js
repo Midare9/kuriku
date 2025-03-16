@@ -1,4 +1,5 @@
 "use client";
+
 import { Button, Input } from "@heroui/react";
 import { OauthButton } from "../_components/oauthButton";
 import { useActionState } from "react";
@@ -62,12 +63,12 @@ export default function Page() {
         <OauthButton />
 
         <p className="mt-6 text-center text-sm text-gray-600">
-          Don't have an account?{" "}
+          Dont have an account?{" "}
           <Link
             href="/register"
             className="font-medium text-primary-600 hover:text-primary-500"
           >
-            Sign in
+            Sign up
           </Link>
         </p>
       </div>
