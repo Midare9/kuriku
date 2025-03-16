@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { google } from "@/utils/arctic";
 import { prisma } from "@/utils/prisma";
 import { redirect } from "next/navigation";
+import { NextResponse } from "next/server";
 
 export async function GET(req) {
   const query = req.nextUrl.searchParams;
@@ -77,3 +78,6 @@ export async function GET(req) {
 
   redirect("/dashboard");
 }
+
+
+
