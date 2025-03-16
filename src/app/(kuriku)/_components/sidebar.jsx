@@ -15,7 +15,7 @@ export function Sidebar() {
               href="/my-curriculum"
               className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
             >
-              My Curriculum
+              My Curriculum soon
             </Link>
             <Link href="/edit-profile" className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
             >
