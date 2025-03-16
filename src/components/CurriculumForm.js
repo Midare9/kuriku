@@ -27,15 +27,36 @@ export default function CurriculumForm() {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="form">
-        {/* Input Fields */}
-        <Input type="text" placeholder="Topic" value={topic} onChange={(e) => setTopic(e.target.value)} />
-        <Input type="text" placeholder="Grade Level" value={gradeLevel} onChange={(e) => setGradeLevel(e.target.value)} />
-        <Input type="number" placeholder="Duration (in weeks)" value={duration} onChange={(e) => setDuration(e.target.value)} />
-        <Textarea placeholder="Learning Objectives" value={learningObjectives} onChange={(e) => setLearningObjectives(e.target.value)} />
-        {/* Submit Button */}
-        <Button type="submit" className="form-button">
-          Generate Curriculum
-        </Button>
+        <div className="space-y-2">
+          {/* Input Fields */}
+          <Input
+            type="text"
+            placeholder="Topic"
+            value={topic}
+            onChange={(e) => setTopic(e.target.value)}
+          />
+          <Input
+            type="text"
+            placeholder="Grade Level"
+            value={gradeLevel}
+            onChange={(e) => setGradeLevel(e.target.value)}
+          />
+          <Input
+            type="number"
+            placeholder="Duration (in weeks)"
+            value={duration}
+            onChange={(e) => setDuration(e.target.value)}
+          />
+          <Textarea
+            placeholder="Learning Objectives"
+            value={learningObjectives}
+            onChange={(e) => setLearningObjectives(e.target.value)}
+          />
+          {/* Submit Button */}
+          <Button type="submit" color="primary" className="form-button">
+            Generate
+          </Button>
+        </div>
       </form>
 
       {/* Render Generated Curriculum */}
