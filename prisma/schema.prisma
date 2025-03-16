@@ -32,6 +32,7 @@ model Curriculum {
   gradeLevel         String
   duration           String
   learningObjectives String
-  User               User?   @relation(fields: [userId], references: [id])
-  userId             String?
+
+    userId String
+  user User @relation(fields: [userId], references: [id])
 }

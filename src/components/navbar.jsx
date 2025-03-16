@@ -3,18 +3,16 @@ import Link from "next/link";
 
 export const Navbar = () => {
 	return (
-		<div className="flex items-center justify-between h-20 pl-48 pr-48">
-			<div className="kuriku-title">kuriku | curriculum generator</div>
-			<div className="flex items-center gap-6">
-				<Link href="/login">
-					<Button
-						color="default"
-						variant="ghost">
-						Sign in
-					</Button>
-				</Link>
-				<Link href="/dashboard">Get started</Link>
-			</div>
-		</div>
-	);
+    <header className="bg-white border-b border-gray-200">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex-shrink-0">
+            <Link href="/" className="text-xl font-bold text-black">
+              Kuri-ku
+            </Link>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
 };
