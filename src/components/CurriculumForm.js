@@ -72,7 +72,7 @@ export default function CurriculumForm() {
       {/* Render Generated Curriculum */}
       {generatedCurriculum && (
         <div className="response-container m-2">
-          <h3>Here's your Curriculum</h3>
+          <h3>Here is your Curriculum</h3>
           <div className="prose">
             <ReactMarkdown>{generatedCurriculum.description}</ReactMarkdown>
           </div>
