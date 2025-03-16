@@ -1,5 +1,11 @@
+import { Navbar } from "@/components/navbar";
+import { HeroBanner } from "@/components/heroBanner";
+
 export default function Page() {
-  return <div>Kuri-ku</div>;
+	return (
+		<main>
+			<Navbar />
+			<HeroBanner />
+		</main>
+	);
 }
-
-
