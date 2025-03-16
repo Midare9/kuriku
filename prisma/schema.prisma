@@ -33,6 +33,6 @@ model Curriculum {
   duration           String
   learningObjectives String
 
-  userId String
+    userId String
   user User @relation(fields: [userId], references: [id])
 }
